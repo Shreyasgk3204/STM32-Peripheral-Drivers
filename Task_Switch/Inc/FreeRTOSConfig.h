@@ -17,12 +17,14 @@
 #define configUSE_IDLE_HOOK							0
 #define configUSE_TICK_HOOK							0
 #define configTOTAL_HEAP_SIZE 						0x1000
-#define configCPU_CLOCK_HZ							8000000
+#define configCPU_CLOCK_HZ							4000000
 #define configTICK_RATE_HZ							10
 #define configENFORCE_SYSTEM_CALLS_FROM_KERNEL_ONLY    1  // Security: Only kernel can make system calls
 #define configALLOW_UNPRIVILEGED_CRITICAL_SECTIONS     0  // Disallow unprivileged critical sections
-
-
+#define vPortSVCHandler SVC_Handler
+#define xPortPendSVHandler PendSV_Handler
+#define xPortSysTickHandler SysTick_Handler
+#define INCLUDE_vTaskDelay                     1
 
 
 #endif /* FREERTOSCONFIG_H_ */
